@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/currentFragment">
+
+    <fragment
+        android:id="@+id/historyFragment"
+        android:name="com.panshao.TCP.HistoryFragment"
+        android:label="历史数据"
+        tools:layout="@layout/fragment_history"/>
+    <fragment
+        android:id="@+id/connectFragment"
+        android:name="com.panshao.TCP.ConnectFragment"
+        android:label="连接"
+        tools:layout="@layout/fragment_connect" />
+    <fragment
+        android:id="@+id/currentFragment"
+        android:name="com.panshao.TCP.CurrentFragment"
+        android:label="实时数据"
+        tools:layout="@layout/current_fragment">
+        <action
+            android:id="@+id/action_currentFragment_to_connectFragment"
+            app:destination="@id/connectFragment" />
+    </fragment>
+</navigation>
